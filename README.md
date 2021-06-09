@@ -4,16 +4,16 @@
 
 # Reference-Counted Singleton
 
-[`RefCountedSingleton`] is a reference-counted singleton whose protected data
+`RefCountedSingleton` is a reference-counted singleton whose protected data
 can be recreated as needed.
 
-The protected data is created when [`RefCountedSingleton::get_or_init`]
+The protected data is created when `RefCountedSingleton::get_or_init`
 is called.
-That functions returns an [`RCSRef`] reference to the singleton.
+That functions returns an `RCSRef` reference to the singleton.
 
-[`RCSRef`] instances can be cloned as needed.
-The last [`RCSRef`] reference drops the data.
-Calling [`RefCountedSingleton::get_or_init`] again recreates the data.
+`RCSRef` instances can be cloned as needed.
+The last `RCSRef` reference drops the data.
+Calling `RefCountedSingleton::get_or_init` again recreates the data.
 
 ## Versioning
 
