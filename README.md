@@ -1,6 +1,6 @@
 [![crates.io](https://img.shields.io/crates/v/reference-counted-singleton.svg)](https://crates.io/crates/reference-counted-singleton)
 [![docs.rs](https://docs.rs/reference-counted-singleton/badge.svg)](https://docs.rs/reference-counted-singleton)
-[![license](https://img.shields.io/github/license/koutheir/reference-counted-singleton?color=black)](https://raw.githubusercontent.com/koutheir/reference-counted-singleton/master/LICENSE.md)
+[![license](https://img.shields.io/github/license/koutheir/reference-counted-singleton?color=black)](https://raw.githubusercontent.com/koutheir/reference-counted-singleton/master/LICENSE.txt)
 
 # Reference-Counted Singleton
 
