@@ -19,5 +19,5 @@ documentation = "https://docs.rs/reference-counted-singleton"
 [dependencies]
 
 [dev-dependencies]
-assert_matches = { version = "1.4" }
+assert_matches = { version = "1.5" }
 serial_test    = { version = "0.5" }
