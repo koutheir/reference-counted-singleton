@@ -1,7 +1,7 @@
 [package]
 name = "reference-counted-singleton"
 description = "Reference-counted singleton whose protected data can be recreated as needed"
-version = "0.1.0" # Remember to update `html_root_url`.
+version = "0.1.1" # Remember to update `html_root_url`.
 authors = ["Koutheir Attouchi <koutheir@gmail.com>"]
 edition = "2018"
 readme = "README.md"

@@ -1,3 +1,5 @@
+#![doc(html_root_url = "https://docs.rs/reference-counted-singleton/0.1.1")]
+
 /*!
 [`RefCountedSingleton`] is a reference-counted singleton whose protected data
 can be recreated as needed.
@@ -10,6 +12,7 @@ That functions returns an [`RCSRef`] reference to the singleton.
 The last [`RCSRef`] reference drops the data.
 Calling [`RefCountedSingleton::get_or_init`] again recreates the data.
 */
+
 #[cfg(test)]
 mod tests;
 
