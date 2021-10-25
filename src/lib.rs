@@ -65,7 +65,7 @@ impl<T> RefCountedSingleton<T> {
 
                         Ok(RCSRef {
                             data: ManuallyDrop::new(data_ref),
-                            rcs: &self,
+                            rcs: self,
                         })
                     }
 
@@ -76,7 +76,7 @@ impl<T> RefCountedSingleton<T> {
                 // Data is already created. Return a new reference.
                 Some(ref data) => Ok(RCSRef {
                     data: ManuallyDrop::new(Arc::clone(data)),
-                    rcs: &self,
+                    rcs: self,
                 }),
             }
         } else {
@@ -92,7 +92,7 @@ impl<T> RefCountedSingleton<T> {
         self.0.lock().ok().and_then(|value| {
             value.as_ref().map(|data| RCSRef {
                 data: ManuallyDrop::new(Arc::clone(data)),
-                rcs: &self,
+                rcs: self,
             })
         })
     }
