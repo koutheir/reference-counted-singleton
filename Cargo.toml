@@ -1,17 +1,24 @@
 [package]
 name = "reference-counted-singleton"
 description = "Reference-counted singleton whose protected data can be recreated as needed"
-version = "0.1.1" # Remember to update `html_root_url`.
+version = "0.1.2" # Remember to update `html_root_url`.
 authors = ["Koutheir Attouchi <koutheir@gmail.com>"]
-edition = "2018"
+edition = "2021"
 readme = "README.md"
 license = "MIT"
 keywords = [
-    "static", "concurrency", "cross-platform", "data-structure", "cache"
+    "static",
+    "concurrency",
+    "cross-platform",
+    "data-structure",
+    "cache",
 ]
 categories = [
-    "algorithms", "memory-management", "concurrency",
-    "data-structures", "development-tools::ffi"
+    "algorithms",
+    "memory-management",
+    "concurrency",
+    "data-structures",
+    "development-tools::ffi",
 ]
 repository = "https://github.com/koutheir/reference-counted-singleton"
 documentation = "https://docs.rs/reference-counted-singleton"
@@ -20,4 +27,4 @@ documentation = "https://docs.rs/reference-counted-singleton"
 
 [dev-dependencies]
 assert_matches = { version = "1.5" }
-serial_test    = { version = "0.5" }
+serial_test    = { version = "0.9" }

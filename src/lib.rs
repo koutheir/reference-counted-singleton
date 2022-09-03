@@ -27,7 +27,7 @@ use std::sync::{Arc, Mutex};
 ///
 /// The protected data is created when [`RefCountedSingleton::get_or_init`]
 /// is called.
-/// That functions returns an [`RCSRef`] reference to the singleton.
+/// That function returns an [`RCSRef`] reference to the singleton.
 ///
 /// [`RCSRef`] instances can be cloned as needed.
 /// The last [`RCSRef`] reference drops the data.
