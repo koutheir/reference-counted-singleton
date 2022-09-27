@@ -1,17 +1,5 @@
+#![doc = include_str!("../README.md")]
 #![doc(html_root_url = "https://docs.rs/reference-counted-singleton/0.1.1")]
-
-/*!
-[`RefCountedSingleton`] is a reference-counted singleton whose protected data
-can be recreated as needed.
-
-The protected data is created when [`RefCountedSingleton::get_or_init`]
-is called.
-That functions returns an [`RCSRef`] reference to the singleton.
-
-[`RCSRef`] instances can be cloned as needed.
-The last [`RCSRef`] reference drops the data.
-Calling [`RefCountedSingleton::get_or_init`] again recreates the data.
-*/
 
 #[cfg(test)]
 mod tests;
