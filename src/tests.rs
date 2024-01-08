@@ -34,9 +34,7 @@ impl<'t> Eq for T1<'t> {}
 
 impl<'t> PartialOrd for T1<'t> {
     fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        self.0
-            .load(atomic::Ordering::Acquire)
-            .partial_cmp(&other.0.load(atomic::Ordering::Acquire))
+        Some(self.cmp(other))
     }
 }
 

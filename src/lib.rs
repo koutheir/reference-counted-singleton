@@ -1,5 +1,6 @@
 #![doc = include_str!("../README.md")]
-#![doc(html_root_url = "https://docs.rs/reference-counted-singleton/0.1.1")]
+#![doc(html_root_url = "https://docs.rs/reference-counted-singleton/0.1.3")]
+#![warn(unsafe_op_in_unsafe_fn)]
 
 #[cfg(test)]
 mod tests;
@@ -95,7 +96,7 @@ pub struct RCSRef<'t, T> {
 
 impl<'t, T: PartialEq> PartialEq for RCSRef<'t, T> {
     fn eq(&self, other: &Self) -> bool {
-        self.data.as_ref().deref().eq(other.data.as_ref().deref())
+        Arc::as_ref(&self.data).eq(Arc::as_ref(&other.data))
     }
 }
 
@@ -103,22 +104,19 @@ impl<'t, T: Eq> Eq for RCSRef<'t, T> {}
 
 impl<'t, T: PartialOrd> PartialOrd for RCSRef<'t, T> {
     fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        self.data
-            .as_ref()
-            .deref()
-            .partial_cmp(other.data.as_ref().deref())
+        Arc::as_ref(&self.data).partial_cmp(Arc::as_ref(&other.data))
     }
 }
 
 impl<'t, T: Ord> Ord for RCSRef<'t, T> {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        self.data.as_ref().deref().cmp(other.data.as_ref().deref())
+        Arc::as_ref(&self.data).cmp(Arc::as_ref(&other.data))
     }
 }
 
 impl<'t, T: Hash> Hash for RCSRef<'t, T> {
     fn hash<H: Hasher>(&self, state: &mut H) {
-        self.data.as_ref().deref().hash(state)
+        Arc::as_ref(&self.data).hash(state)
     }
 }
 
@@ -126,7 +124,7 @@ impl<'t, T> Deref for RCSRef<'t, T> {
     type Target = T;
 
     fn deref(&self) -> &T {
-        self.data.deref().deref()
+        Arc::as_ref(&self.data)
     }
 }
 
