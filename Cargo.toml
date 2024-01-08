@@ -22,6 +22,7 @@ categories = [
 ]
 repository = "https://github.com/koutheir/reference-counted-singleton"
 documentation = "https://docs.rs/reference-counted-singleton"
+exclude = [".gitignore", "coverage*"]
 
 [dependencies]
 
