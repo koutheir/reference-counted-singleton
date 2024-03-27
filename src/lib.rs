@@ -1,5 +1,5 @@
 #![doc = include_str!("../README.md")]
-#![doc(html_root_url = "https://docs.rs/reference-counted-singleton/0.1.3")]
+#![doc(html_root_url = "https://docs.rs/reference-counted-singleton/0.1.4")]
 #![warn(unsafe_op_in_unsafe_fn)]
 
 #[cfg(test)]
